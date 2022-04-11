@@ -35,7 +35,7 @@ export default class UserMenu extends GlimmerComponent {
       {
         id: "replies",
         icon: "reply",
-        panelComponent: "",
+        panelComponent: "user-menu/replied-notifications-list",
       },
       {
         id: "mentions",
@@ -64,6 +64,7 @@ export default class UserMenu extends GlimmerComponent {
   changeTab(tab) {
     if (this.currentTabId !== tab.id) {
       this.currentTabId = tab.id;
+      this.currentPanelComponent = tab.panelComponent || DefaultPanelComponent;
     }
   }
 }
